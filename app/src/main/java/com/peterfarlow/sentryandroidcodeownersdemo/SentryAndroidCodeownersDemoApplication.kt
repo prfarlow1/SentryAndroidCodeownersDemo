@@ -1,6 +1,7 @@
 package com.peterfarlow.sentryandroidcodeownersdemo
 
 import android.app.Application
+import com.peterfarlow.core.data.apiKey
 import io.sentry.android.core.SentryAndroid
 
 class SentryAndroidCodeownersDemoApplication : Application() {
@@ -12,5 +13,6 @@ class SentryAndroidCodeownersDemoApplication : Application() {
                 environment = "production"
             }
         }
+        apiKey = BuildConfig.catApiKey
     }
 }

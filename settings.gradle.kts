@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Sentry Android Codeowners Demo"
 include(":app")
+include(":detail")
+include(":core")
