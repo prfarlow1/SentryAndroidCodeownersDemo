@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 
 class DetailViewModel(
     private val httpClient: HttpClient,
+    private val id: String
 ) : ViewModel() {
 
     private val _viewState = MutableStateFlow(DetailViewState(Cat()))
@@ -22,15 +23,15 @@ class DetailViewModel(
 
     init {
         viewModelScope.launch {
-            val cat = httpClient.get<Cat>("https://api.thecatapi.com/v1/images/search?limit=40&has_breeds=1", typeInfo = typeInfo<Cat>()) ?: Cat()
+            val cat = httpClient.get<Cat>("https://api.thecatapi.com/v1/images/$id", typeInfo = typeInfo<Cat>()) ?: Cat()
             _viewState.value = DetailViewState(cat)
         }
     }
+}
 
-    companion object Factory : ViewModelProvider.Factory {
-        @Suppress("UNCHECKED_CAST")
-        override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
-            return DetailViewModel(httpClient = HttpClient(apiKey = apiKey)) as T
-        }
+class DetailViewModelFactory(private val id: String) : ViewModelProvider.Factory {
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
+        return DetailViewModel(httpClient = HttpClient(apiKey = apiKey), id = id) as T
     }
 }

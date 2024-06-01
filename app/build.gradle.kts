@@ -1,3 +1,6 @@
+import java.time.Clock
+import java.time.Instant
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -11,11 +14,12 @@ android {
     compileSdk = 34
 
     defaultConfig {
+        val millis = Instant.now(Clock.systemUTC()).epochSecond.toInt()
         applicationId = "com.peterfarlow.sentryandroidcodeownersdemo"
         minSdk = 33
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = millis
+        versionName = "1.0.$millis"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
