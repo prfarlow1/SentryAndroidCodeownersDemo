@@ -75,7 +75,7 @@ fun HomeScreen(
             }
         }
         item {
-            Button(onClick = { HomeCrasher().crash() }) {
+            Button(onClick = { HomeCrasher().crash34915845() }) {
                 Text(
                     text = "crash app",
                     style = MaterialTheme.typography.bodyLarge,
