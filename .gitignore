@@ -24,3 +24,5 @@ captures/
 .cxx/
 *.apk
 output.json
+
+commonkeystore.jks
