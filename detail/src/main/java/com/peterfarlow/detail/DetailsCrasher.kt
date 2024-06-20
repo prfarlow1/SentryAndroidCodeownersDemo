@@ -1,5 +1,5 @@
 package com.peterfarlow.detail
 
 class DetailsCrasher {
-    fun crash435435(): Nothing = throw RuntimeException("crashed from details2!")
+    fun crash4357458(): Nothing = throw RuntimeException("crashed from details2!")
 }
