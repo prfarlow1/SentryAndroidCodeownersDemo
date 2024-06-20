@@ -57,6 +57,6 @@ fun DetailScreen(
     }
     LaunchedEffect(Unit) {
         delay(3_000)
-        DetailsCrasher().crash435435()
+        DetailsCrasher().crash43434443435()
     }
 }

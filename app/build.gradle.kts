@@ -7,6 +7,7 @@ plugins {
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     id("io.sentry.android.gradle").version("4.6.0")
     kotlin("plugin.serialization") version "2.0.0-RC3"
+    id("com.peterfarlow.traceable.app")
 }
 
 android {
