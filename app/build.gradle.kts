@@ -69,11 +69,12 @@ android {
 }
 
 sentry {
-    debug = true
-    includeSourceContext = true
-    org = "codeowners-demo"
-    projectName = "android"
-    authToken = System.getenv("SENTRY_AUTH_TOKEN3")
+    debug.set(true)
+    includeSourceContext.set(true)
+    org.set("codeowners-demo")
+    projectName.set("android")
+    additionalSourceDirsForSourceContext.set(setOf("detail/src/main/java", "core/src/main/java"))
+    authToken.set(System.getenv("SENTRY_AUTH_TOKEN3"))
 }
 
 dependencies {
