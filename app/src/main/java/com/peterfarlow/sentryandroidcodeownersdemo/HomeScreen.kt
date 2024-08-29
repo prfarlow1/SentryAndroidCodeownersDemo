@@ -35,7 +35,10 @@ fun HomeScreen(
     onNavigation: (cat: Cat) -> Unit = { }
 ) {
     val viewState by viewModel.viewState.collectAsState()
-    LazyColumn(
+    TestView(viewState = viewState) {
+        viewModel.onCatClicked(it.id)
+    }
+    /*LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background),
@@ -84,7 +87,7 @@ fun HomeScreen(
             }
         }
 
-    }
+    }*/
 }
 
 @Preview(showBackground = true)

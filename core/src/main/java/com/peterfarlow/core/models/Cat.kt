@@ -7,4 +7,5 @@ data class Cat(
     val breeds: List<Breed> = emptyList(),
     val id: String = "",
     val url: String = "",
+    val selected: Boolean = false
 )
