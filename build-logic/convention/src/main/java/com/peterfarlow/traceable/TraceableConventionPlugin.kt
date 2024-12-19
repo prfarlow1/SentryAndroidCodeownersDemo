@@ -31,7 +31,7 @@ class TraceableLibraryConventionPlugin : Plugin<Project> {
                     runBlocking {
                         KtorClientProvider.client.post("https://us.sentry.io/api/0/organizations/codeowners-demo/code-mappings/") {
                             headers {
-                                set("Authorization", "Bearer 7890b09cacf78cdae7805ad8460a6292471cbe20d927fb3623a8d8607b758d45")
+                                set("Authorization", "Bearer ")
                             }
                             contentType(ContentType.Application.Json)
                             setBody(body)
